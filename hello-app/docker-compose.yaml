@@ -7,5 +7,10 @@ services:
       dockerfile: Dockerfile
     container_name: angular-app
     ports:
-      - "80:80"
+      - "4200:4200"
+    volumes:
+      - .:/app
+      - /app/node_modules
     restart: unless-stopped
+    environment:
+      - NODE_ENV=development
